@@ -44,6 +44,10 @@ h2 { font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: 
 .layer { display: grid; grid-template-columns: auto auto 1fr auto; align-items: center; gap: 8px; cursor: pointer; }
 .layer input { margin: 0; accent-color: var(--focus); }
 .swatch { width: 14px; height: 14px; border-radius: 2px; border: 2px solid; box-sizing: border-box; }
+.basemap { display: flex; flex-direction: column; gap: 8px; }
+.basemap .layer { grid-template-columns: auto 1fr; }
+.opacity { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 8px; }
+.opacity input { width: 100%; accent-color: var(--focus); margin: 0; }
 .count { font-family: var(--mono); font-size: 12px; color: var(--ink-muted); font-variant-numeric: tabular-nums; }
 input[type="search"] { width: 100%; box-sizing: border-box; font: inherit; padding: 8px 10px; border: 1px solid var(--rule); border-radius: 4px; background: var(--paper); color: var(--ink); }
 input[type="search"]:focus, .layer input:focus-visible, .result:focus-visible, a:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
@@ -85,6 +89,13 @@ input[type="search"]:focus, .layer input:focus-visible, .result:focus-visible, a
         <div class="layers" id="layers"></div>
       </div>
       <div>
+        <h2>Base map</h2>
+        <div class="basemap">
+          <label class="layer"><input type="checkbox" id="basemap-on" checked><span>Show streets and place names</span></label>
+          <label class="opacity" for="basemap-opacity"><span>Opacity</span><input type="range" id="basemap-opacity" min="10" max="100" step="5" value="40"><span class="count" id="basemap-opacity-value">40%</span></label>
+        </div>
+      </div>
+      <div>
         <h2>Find a unit</h2>
         <input type="search" id="search" placeholder="Name in English or Greek" autocomplete="off">
         <ul class="results" id="results"></ul>
@@ -112,10 +123,21 @@ input[type="search"]:focus, .layer input:focus-visible, .result:focus-visible, a
   var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   var map = L.map("map", { zoomAnimation: !reduceMotion, fadeAnimation: !reduceMotion });
-  L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+  var basemap = L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
     maxZoom: 19,
+    opacity: 0.4,
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
   }).addTo(map);
+  var basemapOn = document.getElementById("basemap-on");
+  var basemapOpacity = document.getElementById("basemap-opacity");
+  var basemapOpacityValue = document.getElementById("basemap-opacity-value");
+  basemapOn.addEventListener("change", function () {
+    if (basemapOn.checked) basemap.addTo(map); else map.removeLayer(basemap);
+  });
+  basemapOpacity.addEventListener("input", function () {
+    basemap.setOpacity(basemapOpacity.value / 100);
+    basemapOpacityValue.textContent = basemapOpacity.value + "%";
+  });
   var selected = null;
   var layerObjects = {};
 
