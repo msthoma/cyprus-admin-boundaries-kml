@@ -1,0 +1,137 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+	<Document>
+		<name>LEFKOSIA, LEFKOSIA NEMPETCHANE</name>
+		<Style id="PolyStyle60">
+			<LabelStyle>
+				<color>00000000</color>
+				<scale>0.000000</scale>
+			</LabelStyle>
+			<LineStyle>
+				<color>ffff7000</color>
+				<width>2.000000</width>
+			</LineStyle>
+			<PolyStyle>
+				<color>00828282</color>
+				<outline>1</outline>
+			</PolyStyle>
+		</Style>
+		<Placemark id="ID_60093">
+			<name>LEFKOSIA, LEFKOSIA NEMPETCHANE</name>
+			<snippet />
+			<description>&lt;html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:msxsl="urn:schemas-microsoft-com:xslt"&gt;
+
+&lt;head&gt;
+
+&lt;META http-equiv="Content-Type" content="text/html"&gt;
+
+&lt;meta http-equiv="content-type" content="text/html; charset=UTF-8"&gt;
+
+&lt;/head&gt;
+
+&lt;body style="margin:0px 0px 0px 0px;overflow:auto;background:#FFFFFF;"&gt;
+
+&lt;table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-collapse:collapse;padding:3px 3px 3px 3px"&gt;
+
+&lt;tr style="text-align:center;font-weight:bold;background:#9CBCE2"&gt;
+
+&lt;td&gt;1&lt;/td&gt;
+
+&lt;/tr&gt;
+
+&lt;tr&gt;
+
+&lt;td&gt;
+
+&lt;table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-spacing:0px; padding:3px 3px 3px 3px"&gt;
+
+&lt;tr&gt;
+
+&lt;td&gt;DIST_CODE&lt;/td&gt;
+
+&lt;td&gt;1&lt;/td&gt;
+
+&lt;/tr&gt;
+
+&lt;tr bgcolor="#D4E4F3"&gt;
+
+&lt;td&gt;VIL_CODE&lt;/td&gt;
+
+&lt;td&gt;0&lt;/td&gt;
+
+&lt;/tr&gt;
+
+&lt;tr&gt;
+
+&lt;td&gt;QRTR_CODE&lt;/td&gt;
+
+&lt;td&gt;3&lt;/td&gt;
+
+&lt;/tr&gt;
+
+&lt;tr bgcolor="#D4E4F3"&gt;
+
+&lt;td&gt;QRTR_NM_E&lt;/td&gt;
+
+&lt;td&gt;NEMPETCHANE&lt;/td&gt;
+
+&lt;/tr&gt;
+
+&lt;tr&gt;
+
+&lt;td&gt;QRTR_NM_G&lt;/td&gt;
+
+&lt;td&gt;ΝΕΜΠΕΤΧΑΝΕ&lt;/td&gt;
+
+&lt;/tr&gt;
+
+&lt;tr bgcolor="#D4E4F3"&gt;
+
+&lt;td&gt;VIL_CCD&lt;/td&gt;
+
+&lt;td&gt;1000&lt;/td&gt;
+
+&lt;/tr&gt;
+
+&lt;tr&gt;
+
+&lt;td&gt;QRTR_CCD&lt;/td&gt;
+
+&lt;td&gt;100003&lt;/td&gt;
+
+&lt;/tr&gt;
+
+&lt;/table&gt;
+
+&lt;/td&gt;
+
+&lt;/tr&gt;
+
+&lt;/table&gt;
+
+&lt;/body&gt;&lt;script type="text/javascript"&gt;
+
+				function changeImage(attElement, nameElement) {
+
+				document.getElementById('imageAttachment').src = attElement;
+
+				document.getElementById('imageName').innerHTML = nameElement;}
+
+			&lt;/script&gt;&lt;/html&gt;
+
+</description>
+			<styleUrl>#PolyStyle60</styleUrl>
+			<MultiGeometry>
+				<Polygon>
+					<extrude>0</extrude>
+					<altitudeMode>clampToGround</altitudeMode>
+					<outerBoundaryIs>
+						<LinearRing>
+							<coordinates> 33.35937163880526,35.17327540942559,0 33.35972230355646,35.17320773738517,0 33.35976450446185,35.17319987086668,0 33.36015926298119,35.17312654915146,0 33.36019866340825,35.17311471925653,0 33.36037847446918,35.17307958255063,0 33.36047884901829,35.17306486335549,0 33.36080262333608,35.17376494675766,0 33.36082202231539,35.1738100939897,0 33.3608629135483,35.17381361201693,0 33.36096399550583,35.1738079944122,0 33.36144512177849,35.17377349023722,0 33.3614466983035,35.17378541370742,0 33.36143741364029,35.17386739904654,0 33.36143575458243,35.17394150416153,0 33.36141856144641,35.17438147638256,0 33.36142703232849,35.17449164676706,0 33.36143447547191,35.17461045198318,0 33.36144710718994,35.1746831821844,0 33.36146525105593,35.17479707981365,0 33.361500507256,35.17502716677979,0 33.36152693029481,35.17518428775714,0 33.3614298387666,35.17520413508228,0 33.36137144780611,35.17521582011947,0 33.36132597308354,35.17522038884064,0 33.36124313384938,35.17522767581745,0 33.36120056553136,35.17522862933905,0 33.36110131007082,35.17522563877802,0 33.36091248450423,35.17522519647704,0 33.36086258527899,35.17523020817297,0 33.36085074914332,35.17524450712188,0 33.3607639174147,35.1753748849618,0 33.36053774764202,35.17531670981893,0 33.36024264881065,35.17523135305542,0 33.35972324708509,35.17493974915175,0 33.35951293724692,35.17483593598188,0 33.35962208412207,35.17471540993363,0 33.35941943172161,35.17460299347273,0 33.35930490306259,35.17454932790329,0 33.35929167655165,35.17453085606619,0 33.35928398115649,35.17450871356257,0 33.35928428108804,35.17449504119914,0 33.35929876089592,35.17445802839296,0 33.35934722564073,35.17433767084489,0 33.35938702006641,35.17424383193188,0 33.35941411020329,35.17422225416045,0 33.3594509453004,35.17419612065486,0 33.35949813285099,35.17413185981011,0 33.35953878181043,35.17411448554282,0 33.35972279249001,35.17410606373754,0 33.35973689721105,35.17410408475044,0 33.35974479543812,35.17409499685522,0 33.35975626555009,35.17407410899177,0 33.35975076699322,35.17405425584784,0 33.35972272676753,35.17398397433809,0 33.35961491818603,35.17377393202347,0 33.35948286438288,35.17350409713298,0 33.35937163880526,35.17327540942559,0</coordinates>
+						</LinearRing>
+					</outerBoundaryIs>
+				</Polygon>
+			</MultiGeometry>
+		</Placemark>
+	</Document>
+</kml>

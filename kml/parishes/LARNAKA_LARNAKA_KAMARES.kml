@@ -1,0 +1,137 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+	<Document>
+		<name>LARNAKA, LARNAKA KAMARES</name>
+		<Style id="PolyStyle60">
+			<LabelStyle>
+				<color>00000000</color>
+				<scale>0.000000</scale>
+			</LabelStyle>
+			<LineStyle>
+				<color>ffff7000</color>
+				<width>2.000000</width>
+			</LineStyle>
+			<PolyStyle>
+				<color>00828282</color>
+				<outline>1</outline>
+			</PolyStyle>
+		</Style>
+		<Placemark id="ID_60042">
+			<name>LARNAKA, LARNAKA KAMARES</name>
+			<snippet />
+			<description>&lt;html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:msxsl="urn:schemas-microsoft-com:xslt"&gt;
+
+&lt;head&gt;
+
+&lt;META http-equiv="Content-Type" content="text/html"&gt;
+
+&lt;meta http-equiv="content-type" content="text/html; charset=UTF-8"&gt;
+
+&lt;/head&gt;
+
+&lt;body style="margin:0px 0px 0px 0px;overflow:auto;background:#FFFFFF;"&gt;
+
+&lt;table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-collapse:collapse;padding:3px 3px 3px 3px"&gt;
+
+&lt;tr style="text-align:center;font-weight:bold;background:#9CBCE2"&gt;
+
+&lt;td&gt;4&lt;/td&gt;
+
+&lt;/tr&gt;
+
+&lt;tr&gt;
+
+&lt;td&gt;
+
+&lt;table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-spacing:0px; padding:3px 3px 3px 3px"&gt;
+
+&lt;tr&gt;
+
+&lt;td&gt;DIST_CODE&lt;/td&gt;
+
+&lt;td&gt;4&lt;/td&gt;
+
+&lt;/tr&gt;
+
+&lt;tr bgcolor="#D4E4F3"&gt;
+
+&lt;td&gt;VIL_CODE&lt;/td&gt;
+
+&lt;td&gt;0&lt;/td&gt;
+
+&lt;/tr&gt;
+
+&lt;tr&gt;
+
+&lt;td&gt;QRTR_CODE&lt;/td&gt;
+
+&lt;td&gt;10&lt;/td&gt;
+
+&lt;/tr&gt;
+
+&lt;tr bgcolor="#D4E4F3"&gt;
+
+&lt;td&gt;QRTR_NM_E&lt;/td&gt;
+
+&lt;td&gt;KAMARES&lt;/td&gt;
+
+&lt;/tr&gt;
+
+&lt;tr&gt;
+
+&lt;td&gt;QRTR_NM_G&lt;/td&gt;
+
+&lt;td&gt;ΚΑΜΑΡΕΣ&lt;/td&gt;
+
+&lt;/tr&gt;
+
+&lt;tr bgcolor="#D4E4F3"&gt;
+
+&lt;td&gt;VIL_CCD&lt;/td&gt;
+
+&lt;td&gt;4000&lt;/td&gt;
+
+&lt;/tr&gt;
+
+&lt;tr&gt;
+
+&lt;td&gt;QRTR_CCD&lt;/td&gt;
+
+&lt;td&gt;400010&lt;/td&gt;
+
+&lt;/tr&gt;
+
+&lt;/table&gt;
+
+&lt;/td&gt;
+
+&lt;/tr&gt;
+
+&lt;/table&gt;
+
+&lt;/body&gt;&lt;script type="text/javascript"&gt;
+
+				function changeImage(attElement, nameElement) {
+
+				document.getElementById('imageAttachment').src = attElement;
+
+				document.getElementById('imageName').innerHTML = nameElement;}
+
+			&lt;/script&gt;&lt;/html&gt;
+
+</description>
+			<styleUrl>#PolyStyle60</styleUrl>
+			<MultiGeometry>
+				<Polygon>
+					<extrude>0</extrude>
+					<altitudeMode>clampToGround</altitudeMode>
+					<outerBoundaryIs>
+						<LinearRing>
+							<coordinates> 33.59652673920824,34.91596959378248,0 33.59687081100898,34.91604971481435,0 33.59727969980563,34.91612532559159,0 33.59785829819931,34.91516727074092,0 33.59797323102744,34.91523412452449,0 33.59813451134764,34.91528360951605,0 33.59868725574233,34.91546798893122,0 33.59939937569874,34.91571913068137,0 33.59971689695555,34.91583308874009,0 33.6003933034842,34.91609293012699,0 33.60081633225018,34.91627138633682,0 33.60077727994781,34.91662353109938,0 33.60072541237646,34.91704086430181,0 33.60079709020054,34.91703926598381,0 33.60078970995188,34.91706421420174,0 33.60078465832118,34.91709724748938,0 33.60101200189008,34.91716774498554,0 33.60100421936174,34.91721511630244,0 33.60117440909558,34.91732793491141,0 33.60112852482377,34.91736054732522,0 33.60112522926492,34.91737519913267,0 33.60113423473181,34.91741781623492,0 33.60114185608077,34.91747787821249,0 33.60120668865006,34.91760709918157,0 33.60122980600357,34.91769337538948,0 33.60120586983275,34.91778010704527,0 33.60118286910563,34.91786035824464,0 33.60117037825147,34.91789927407499,0 33.60106591666861,34.91802201656235,0 33.60104025421388,34.91809220929925,0 33.60103694648462,34.91823685086267,0 33.60107041198509,34.91848910449253,0 33.60118348478543,34.91869969804945,0 33.60026626209039,34.91866441920243,0 33.60026491098407,34.9186771079959,0 33.60026569869792,34.9187193114311,0 33.59923424666627,34.91867788061118,0 33.59865210728545,34.91864164705656,0 33.59758541311047,34.91859549283419,0 33.59750615438012,34.91786610750872,0 33.59746974267865,34.91756381306777,0 33.59691409914447,34.9176365987147,0 33.59511949041865,34.91792358718983,0 33.5943485476358,34.918046865609,0 33.59424696622554,34.91764612622207,0 33.59416004947252,34.91719333262929,0 33.59441526745384,34.9170820855942,0 33.59450928066266,34.91704881477963,0 33.59454547080921,34.91703600787805,0 33.59484961218822,34.91688273147071,0 33.59508733684374,34.91674051281427,0 33.59511540077973,34.91672189259425,0 33.59571800602196,34.91632205044461,0 33.59578454400347,34.91628573491171,0 33.59628865781391,34.91621360844918,0 33.5963464449051,34.91617863810565,0 33.59652673920824,34.91596959378248,0</coordinates>
+						</LinearRing>
+					</outerBoundaryIs>
+				</Polygon>
+			</MultiGeometry>
+		</Placemark>
+	</Document>
+</kml>

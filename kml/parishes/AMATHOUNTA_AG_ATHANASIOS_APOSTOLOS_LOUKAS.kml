@@ -1,0 +1,137 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+	<Document>
+		<name>AMATHOUNTA, AG. ATHANASIOS APOSTOLOS LOUKAS</name>
+		<Style id="PolyStyle60">
+			<LabelStyle>
+				<color>00000000</color>
+				<scale>0.000000</scale>
+			</LabelStyle>
+			<LineStyle>
+				<color>ffff7000</color>
+				<width>2.000000</width>
+			</LineStyle>
+			<PolyStyle>
+				<color>00828282</color>
+				<outline>1</outline>
+			</PolyStyle>
+		</Style>
+		<Placemark id="ID_60156">
+			<name>AMATHOUNTA, AG. ATHANASIOS APOSTOLOS LOUKAS</name>
+			<snippet />
+			<description>&lt;html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:msxsl="urn:schemas-microsoft-com:xslt"&gt;
+
+&lt;head&gt;
+
+&lt;META http-equiv="Content-Type" content="text/html"&gt;
+
+&lt;meta http-equiv="content-type" content="text/html; charset=UTF-8"&gt;
+
+&lt;/head&gt;
+
+&lt;body style="margin:0px 0px 0px 0px;overflow:auto;background:#FFFFFF;"&gt;
+
+&lt;table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-collapse:collapse;padding:3px 3px 3px 3px"&gt;
+
+&lt;tr style="text-align:center;font-weight:bold;background:#9CBCE2"&gt;
+
+&lt;td&gt;5&lt;/td&gt;
+
+&lt;/tr&gt;
+
+&lt;tr&gt;
+
+&lt;td&gt;
+
+&lt;table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-spacing:0px; padding:3px 3px 3px 3px"&gt;
+
+&lt;tr&gt;
+
+&lt;td&gt;DIST_CODE&lt;/td&gt;
+
+&lt;td&gt;5&lt;/td&gt;
+
+&lt;/tr&gt;
+
+&lt;tr bgcolor="#D4E4F3"&gt;
+
+&lt;td&gt;VIL_CODE&lt;/td&gt;
+
+&lt;td&gt;12&lt;/td&gt;
+
+&lt;/tr&gt;
+
+&lt;tr&gt;
+
+&lt;td&gt;QRTR_CODE&lt;/td&gt;
+
+&lt;td&gt;3&lt;/td&gt;
+
+&lt;/tr&gt;
+
+&lt;tr bgcolor="#D4E4F3"&gt;
+
+&lt;td&gt;QRTR_NM_E&lt;/td&gt;
+
+&lt;td&gt;APOSTOLOS LOUKAS&lt;/td&gt;
+
+&lt;/tr&gt;
+
+&lt;tr&gt;
+
+&lt;td&gt;QRTR_NM_G&lt;/td&gt;
+
+&lt;td&gt;ΑΠΟΣΤΟΛΟΣ ΛΟΥΚΑΣ&lt;/td&gt;
+
+&lt;/tr&gt;
+
+&lt;tr bgcolor="#D4E4F3"&gt;
+
+&lt;td&gt;VIL_CCD&lt;/td&gt;
+
+&lt;td&gt;5012&lt;/td&gt;
+
+&lt;/tr&gt;
+
+&lt;tr&gt;
+
+&lt;td&gt;QRTR_CCD&lt;/td&gt;
+
+&lt;td&gt;501203&lt;/td&gt;
+
+&lt;/tr&gt;
+
+&lt;/table&gt;
+
+&lt;/td&gt;
+
+&lt;/tr&gt;
+
+&lt;/table&gt;
+
+&lt;/body&gt;&lt;script type="text/javascript"&gt;
+
+				function changeImage(attElement, nameElement) {
+
+				document.getElementById('imageAttachment').src = attElement;
+
+				document.getElementById('imageName').innerHTML = nameElement;}
+
+			&lt;/script&gt;&lt;/html&gt;
+
+</description>
+			<styleUrl>#PolyStyle60</styleUrl>
+			<MultiGeometry>
+				<Polygon>
+					<extrude>0</extrude>
+					<altitudeMode>clampToGround</altitudeMode>
+					<outerBoundaryIs>
+						<LinearRing>
+							<coordinates> 33.0528156969641,34.70576336745278,0 33.05354644246995,34.70590619322736,0 33.05403147631233,34.70598676270919,0 33.05680501599787,34.70639150885317,0 33.05768181544226,34.70655370801208,0 33.06049569804009,34.70700903892478,0 33.06074152555841,34.70704536222485,0 33.06044550179777,34.70887797957943,0 33.06030241904941,34.7100692488555,0 33.06011603461981,34.71046233718594,0 33.05997872616,34.71064365728308,0 33.05984550478811,34.71080295408409,0 33.05959025180876,34.710845414952,0 33.05957764789831,34.71083530661254,0 33.05935856934578,34.7106535706366,0 33.05908206467701,34.71040348194609,0 33.05881652567255,34.71015108677078,0 33.05869130521766,34.71005922415703,0 33.05862055220198,34.71000515463329,0 33.05852556864046,34.70993964351953,0 33.05843147633936,34.70988856896103,0 33.05827173025069,34.70981089719196,0 33.05806073283502,34.70972076426973,0 33.05763498035305,34.70954922443972,0 33.05714230450145,34.70935557799424,0 33.05684200848906,34.7092742416857,0 33.0563853944736,34.70916339439243,0 33.05607941900605,34.70909336327657,0 33.05594211764676,34.70906470371429,0 33.055663671259,34.70902159847435,0 33.0552348367051,34.70896146175358,0 33.05501096300603,34.70894650214634,0 33.0548635942266,34.70894281846521,0 33.05471757549582,34.70894860124933,0 33.05456543666848,34.70895548278798,0 33.05449098655163,34.70895955108735,0 33.05433923441812,34.7089702210538,0 33.05426253846817,34.70897715058291,0 33.05426169709541,34.70897757645194,0 33.05415422125438,34.70898933887951,0 33.05414166943311,34.70899071289013,0 33.05397479584703,34.70863497084891,0 33.05377564390032,34.70825835842232,0 33.05374643904461,34.70821018857098,0 33.05372254659638,34.70817296744293,0 33.05369600435359,34.70814012772638,0 33.05364559802307,34.70811386843432,0 33.05358989632104,34.70810294187028,0 33.0534917691897,34.70810298498418,0 33.05329836344007,34.70812081969803,0 33.05316823657477,34.70813816856473,0 33.0530144326019,34.70816451706666,0 33.05284738000896,34.70821058178944,0 33.05259361806045,34.70829939544402,0 33.05223880802259,34.70841434321005,0 33.05240701472607,34.70803342282581,0 33.05232023506367,34.70786869550518,0 33.05222693744256,34.70774178673198,0 33.05193401755879,34.70744614638695,0 33.05241293247724,34.70704348485207,0 33.05256817550948,34.7068583954791,0 33.05266944705041,34.70666522681637,0 33.05283600850731,34.70627890482668,0 33.05283430202971,34.70616681118717,0 33.05281791360849,34.7061114472046,0 33.05278601638121,34.70605528041663,0 33.05280435901958,34.70592211249858,0 33.0528156969641,34.70576336745278,0</coordinates>
+						</LinearRing>
+					</outerBoundaryIs>
+				</Polygon>
+			</MultiGeometry>
+		</Placemark>
+	</Document>
+</kml>

@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cyprus administrative boundaries</title>
+<meta name="description" content="Every district, municipality, community and parish boundary of Cyprus from the Department of Lands and Surveys map, with a KML file for each.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+<style>
+:root {
+  --paper: #f2f4f3;
+  --panel: #ffffff;
+  --ink: #1e2a2b;
+  --ink-muted: #5c6b6d;
+  --rule: #d5dcda;
+  --accent: #b8860b;
+  --focus: #1f5f8b;
+  --c-districts: #7a1e1e;
+  --c-municipalities-2024: #b5651d;
+  --c-municipalities-communities: #1f5f8b;
+  --c-parishes: #3f7d4e;
+  --sans: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
+  --mono: "IBM Plex Mono", "SFMono-Regular", Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #171c1e; --panel: #1f2629; --ink: #e6ebea; --ink-muted: #9aa8a9;
+    --rule: #33403f; --accent: #e8b923; --focus: #6fb3e0;
+    --c-districts: #e07a6a; --c-municipalities-2024: #e9a24f; --c-municipalities-communities: #6fb3e0; --c-parishes: #7fc48e;
+  }
+}
+html, body { height: 100%; margin: 0; }
+body { background: var(--paper); color: var(--ink); font-family: var(--sans); font-size: 14px; line-height: 1.45; }
+a { color: var(--focus); }
+.app { display: grid; grid-template-columns: 360px 1fr; height: 100%; }
+.panel { background: var(--panel); border-right: 1px solid var(--rule); display: flex; flex-direction: column; min-height: 0; }
+.panel-scroll { overflow-y: auto; padding: 16px; display: flex; flex-direction: column; gap: 18px; }
+h1 { font-size: 18px; font-weight: 600; margin: 0; letter-spacing: -0.01em; text-wrap: balance; }
+.intro { color: var(--ink-muted); font-size: 13px; margin: 6px 0 0; }
+.intro p { margin: 0 0 6px; }
+h2 { font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-muted); margin: 0 0 8px; }
+.layers { display: flex; flex-direction: column; gap: 6px; }
+.layer { display: grid; grid-template-columns: auto auto 1fr auto; align-items: center; gap: 8px; cursor: pointer; }
+.layer input { margin: 0; accent-color: var(--focus); }
+.swatch { width: 14px; height: 14px; border-radius: 2px; border: 2px solid; box-sizing: border-box; }
+.count { font-family: var(--mono); font-size: 12px; color: var(--ink-muted); font-variant-numeric: tabular-nums; }
+input[type="search"] { width: 100%; box-sizing: border-box; font: inherit; padding: 8px 10px; border: 1px solid var(--rule); border-radius: 4px; background: var(--paper); color: var(--ink); }
+input[type="search"]:focus, .layer input:focus-visible, .result:focus-visible, a:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+.results { list-style: none; margin: 8px 0 0; padding: 0; display: flex; flex-direction: column; }
+.result { display: grid; grid-template-columns: 1fr auto; gap: 8px; padding: 6px 4px; border: 0; border-top: 1px solid var(--rule); background: none; color: inherit; font: inherit; text-align: left; cursor: pointer; }
+.result:hover { background: var(--paper); }
+.tag { font-family: var(--mono); font-size: 11px; color: var(--ink-muted); white-space: nowrap; }
+.details { border-top: 2px solid var(--accent); padding-top: 10px; }
+.details .name { font-size: 16px; font-weight: 600; margin: 0; }
+.details .path { font-family: var(--mono); font-size: 12px; margin: 4px 0 10px; word-break: break-all; }
+.attrs { display: grid; grid-template-columns: max-content 1fr; gap: 3px 12px; font-size: 13px; }
+.attrs dt { font-family: var(--mono); font-size: 12px; color: var(--ink-muted); margin: 0; }
+.attrs dd { margin: 0; overflow-wrap: anywhere; }
+.hint { color: var(--ink-muted); font-size: 13px; margin: 0; }
+.links { font-size: 13px; color: var(--ink-muted); border-top: 1px solid var(--rule); padding-top: 12px; }
+.links p { margin: 0 0 4px; }
+#map { min-height: 0; background: var(--paper); }
+.leaflet-container { font-family: var(--sans); }
+@media (max-width: 720px) {
+  .app { grid-template-columns: 1fr; grid-template-rows: 1fr auto; }
+  .panel { order: 2; border-right: 0; border-top: 1px solid var(--rule); max-height: 46%; }
+  #map { order: 1; }
+}
+</style>
+</head>
+<body>
+<div class="app">
+  <aside class="panel">
+    <div class="panel-scroll">
+      <div>
+        <h1>Cyprus administrative boundaries</h1>
+        <div class="intro">
+          <p>Every district, municipality, community and parish of Cyprus, over the whole island, as drawn on the administrative map of the Department of Lands and Surveys, August 2024. Each unit is also available as its own KML file in the <a href="https://github.com/msthoma/cyprus-admin-boundaries-kml">cyprus-admin-boundaries-kml</a> repository.</p>
+          <p>Outlines are simplified to about 5 m for display; the KML files keep the full geometry.</p>
+        </div>
+      </div>
+      <div>
+        <h2>Layers</h2>
+        <div class="layers" id="layers"></div>
+      </div>
+      <div>
+        <h2>Find a unit</h2>
+        <input type="search" id="search" placeholder="Name in English or Greek" autocomplete="off">
+        <ul class="results" id="results"></ul>
+      </div>
+      <div class="details" id="details">
+        <p class="hint">Click a boundary on the map, or search for one, to see its attributes and download its KML file.</p>
+      </div>
+      <div class="links">
+        <p>Source: <a href="https://data.gov.cy/en/dataset/187">dataset 187</a> on the National Open Data Portal of Cyprus, Department of Lands and Surveys, CC BY 4.0.</p>
+        <p>Files, scripts and documentation: <a href="https://github.com/msthoma/cyprus-admin-boundaries-kml">github.com/msthoma/cyprus-admin-boundaries-kml</a></p>
+      </div>
+    </div>
+  </aside>
+  <div id="map"></div>
+</div>
+
+<script id="data" type="application/json">/*DATA*/</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script>
+(function () {
+  var REPO_FILE = "https://github.com/msthoma/cyprus-admin-boundaries-kml/blob/master/kml/";
+  var layersData = JSON.parse(document.getElementById("data").textContent);
+  var css = getComputedStyle(document.documentElement);
+  var weights = { "districts": 2.5, "municipalities-2024": 1.8, "municipalities-communities": 1, "parishes": 0.8 };
+  var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  var map = L.map("map", { zoomAnimation: !reduceMotion, fadeAnimation: !reduceMotion });
+  L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    maxZoom: 19,
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+  }).addTo(map);
+  var selected = null;
+  var layerObjects = {};
+
+  function colour(id) { return css.getPropertyValue("--c-" + id).trim(); }
+  function baseStyle(id) {
+    return { color: colour(id), weight: weights[id], fillColor: colour(id), fillOpacity: 0.04, opacity: 0.9 };
+  }
+
+  layersData.forEach(function (layer, index) {
+    var pane = "pane-" + layer.id;
+    map.createPane(pane).style.zIndex = 400 + index;
+    var geo = L.geoJSON(layer.features, {
+      pane: pane,
+      style: function () { return baseStyle(layer.id); },
+      onEachFeature: function (feature, path) {
+        path.on("mouseover", function () { if (selected !== path) path.setStyle({ weight: weights[layer.id] + 1.5, fillOpacity: 0.15 }); });
+        path.on("mouseout", function () { if (selected !== path) path.setStyle(baseStyle(layer.id)); });
+        path.on("click", function (e) { L.DomEvent.stopPropagation(e); select(layer, feature, path, false); });
+      }
+    });
+    layerObjects[layer.id] = geo;
+    if (layer.id !== "parishes") geo.addTo(map);
+  });
+
+  var all = L.featureGroup(Object.keys(layerObjects).map(function (k) { return layerObjects[k]; }));
+  map.fitBounds(all.getBounds(), { padding: [10, 10] });
+
+  var layersEl = document.getElementById("layers");
+  layersData.forEach(function (layer) {
+    var row = document.createElement("label");
+    row.className = "layer";
+    var box = document.createElement("input");
+    box.type = "checkbox"; box.id = "toggle-" + layer.id; box.checked = map.hasLayer(layerObjects[layer.id]);
+    box.addEventListener("change", function () {
+      if (box.checked) layerObjects[layer.id].addTo(map); else map.removeLayer(layerObjects[layer.id]);
+    });
+    var swatch = document.createElement("span");
+    swatch.className = "swatch"; swatch.style.borderColor = colour(layer.id);
+    var text = document.createElement("span"); text.textContent = layer.label;
+    var count = document.createElement("span"); count.className = "count"; count.textContent = layer.features.features.length;
+    row.append(box, swatch, text, count);
+    layersEl.append(row);
+  });
+
+  function select(layer, feature, path, zoom) {
+    if (selected) selected.setStyle(baseStyle(selected._layerId));
+    selected = path; path._layerId = layer.id;
+    path.setStyle({ weight: weights[layer.id] + 2, fillColor: css.getPropertyValue("--accent").trim(), fillOpacity: 0.45 });
+    path.bringToFront();
+    if (zoom) map.fitBounds(path.getBounds(), { padding: [30, 30], animate: !reduceMotion });
+    var p = feature.properties;
+    var details = document.getElementById("details");
+    details.replaceChildren();
+    var name = document.createElement("p"); name.className = "name"; name.textContent = p.name;
+    var pathEl = document.createElement("p"); pathEl.className = "path";
+    var link = document.createElement("a");
+    link.href = REPO_FILE + layer.id + "/" + p.file; link.textContent = "kml/" + layer.id + "/" + p.file;
+    pathEl.append(link);
+    var dl = document.createElement("dl"); dl.className = "attrs";
+    var skip = { name: 1, file: 1, id: 1 };
+    Object.keys(p).forEach(function (k) {
+      if (skip[k]) return;
+      var dt = document.createElement("dt"); dt.textContent = k;
+      var dd = document.createElement("dd"); dd.textContent = p[k];
+      dl.append(dt, dd);
+    });
+    details.append(name, pathEl, dl);
+  }
+
+  var index = [];
+  layersData.forEach(function (layer) {
+    layerObjects[layer.id].eachLayer(function (path) {
+      var p = path.feature.properties;
+      var text = Object.keys(p).map(function (k) { return p[k]; }).join(" ").toLowerCase();
+      index.push({ layer: layer, feature: path.feature, path: path, text: text, name: p.name });
+    });
+  });
+  var searchEl = document.getElementById("search");
+  var resultsEl = document.getElementById("results");
+  searchEl.addEventListener("input", function () {
+    var q = searchEl.value.trim().toLowerCase();
+    resultsEl.replaceChildren();
+    if (q.length < 2) return;
+    var hits = index.filter(function (item) { return item.text.indexOf(q) >= 0; }).slice(0, 40);
+    hits.forEach(function (item) {
+      var li = document.createElement("li");
+      var btn = document.createElement("button"); btn.className = "result"; btn.type = "button";
+      var n = document.createElement("span"); n.textContent = item.name;
+      var t = document.createElement("span"); t.className = "tag"; t.textContent = item.layer.id;
+      btn.append(n, t);
+      btn.addEventListener("click", function () {
+        if (!map.hasLayer(layerObjects[item.layer.id])) {
+          layerObjects[item.layer.id].addTo(map);
+          document.getElementById("toggle-" + item.layer.id).checked = true;
+        }
+        select(item.layer, item.feature, item.path, true);
+      });
+      li.append(btn); resultsEl.append(li);
+    });
+  });
+})();
+</script>
+</body>
+</html>
